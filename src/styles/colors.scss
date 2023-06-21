@@ -1,0 +1,32 @@
+//Colors
+$dark: #2f333a;
+$grey: #a6a6a6;
+$green-light: #63c4a78d;
+$green: #63c4a7;
+$blue: #547ea8;
+$light-grey: #f3f3f3;
+$white: #ffffff;
+$yellow: #ffca6c;
+$toast-yellow: #eac27c;
+$grey-yellow: #edeee9;
+$salmon: #f18073;
+
+//Sizes
+$breaking-point-xxl: 1400px;
+$breaking-point-xl: 1200px;
+$breaking-point-lg: 992px;
+$breaking-point-md: 768px;
+$breaking-point-sm: 576px;
+$breaking-point-xs: 380px;
+$breaking-point-xxs: 330px;
+
+//Exports
+:export {
+  dark: $dark;
+  grey: $grey;
+  grey-yellow: $grey-yellow;
+  light-grey: $light-grey;
+  white: $white;
+  yellow: $yellow;
+  mobile_breaking_point: $breaking-point-sm;
+}

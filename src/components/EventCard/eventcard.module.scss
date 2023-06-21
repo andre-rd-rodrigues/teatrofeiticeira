@@ -1,0 +1,54 @@
+@import "@/styles/mixins";
+@import "@/styles/colors";
+
+.container {
+  position: relative;
+  color: $white;
+  max-width: 500px;
+  max-height: 300px;
+  height: 400px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  padding: 30px;
+  text-decoration: none;
+  overflow: hidden;
+
+  &:hover {
+    img {
+      transform: scale(1.07);
+    }
+  }
+
+  p,
+  h4 {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-weight: 200;
+  }
+
+  h4 {
+    font-size: var(--fs-l-s);
+    margin: 20px 0 35px 0;
+  }
+}
+
+.image {
+  z-index: -1;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.todayEvent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  color: black;
+  font-weight: bold !important;
+  padding: 10px 20px;
+  font-weight: 200;
+  margin-bottom: 10px;
+}

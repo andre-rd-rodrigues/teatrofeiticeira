@@ -1,0 +1,21 @@
+@import "@/styles/mixins";
+@import "@/styles/colors.scss";
+
+.container {
+  background-color: transparent;
+  transition: 0.4s;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1px solid $dark;
+  padding: 15px 25px;
+  color: $white;
+  letter-spacing: 2px;
+  font-size: var(--fs-s);
+  font-weight: bold;
+
+  &:hover {
+    color: black;
+    background-color: $white;
+    background-position: left;
+  }
+}

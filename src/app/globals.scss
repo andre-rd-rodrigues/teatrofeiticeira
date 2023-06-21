@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@/styles/colors.scss";
+@import "@/styles/mixins";
+@import "@/styles/root";
+
+body {
+  margin: 0;
+  background-color: #e2e8f0;
+}
+
+* {
+  font-family: var(--font-content);
+}
+
+h1,
+h2 {
+  font-family: var(--font-heading);
+}
+
+p {
+  font-weight: 300;
+  line-height: 30px;
+}

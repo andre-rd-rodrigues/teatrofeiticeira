@@ -1,0 +1,10 @@
+@import "@/styles/mixins";
+@import "@/styles/colors";
+
+.container {
+  padding: 0 var(--padding-y);
+  a {
+    text-decoration: none;
+    color: $dark;
+  }
+}
