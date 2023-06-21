@@ -2,23 +2,33 @@
 @import "@/styles/colors";
 
 .container {
-  height: 100vh;
   position: relative;
   color: $white;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 30px;
+  padding: 0 var(--padding-y);
   text-decoration: none;
   overflow: hidden;
 
+  &::after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    background-color: #00000079;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
   p {
-    font-weight: 500;
+    font-weight: 300;
     font-size: var(--fs-m);
   }
 
   h1 {
-    font-size: var(--fs-l);
+    font-size: var(--fs-xl);
   }
 }
 

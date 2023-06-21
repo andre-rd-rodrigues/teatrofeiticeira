@@ -16,15 +16,17 @@ const getAllEvents = async () => {
   const notionEvents = await notion.databases.query({
     database_id,
     filter: {
-      property: "Publish",
-      checkbox: {
-        equals: true
-      },
       and: [
         {
           property: "Date",
           date: {
             after: yesterday
+          }
+        },
+        {
+          property: "Publish",
+          checkbox: {
+            equals: true
           }
         }
       ]
@@ -33,14 +35,14 @@ const getAllEvents = async () => {
     sorts: [
       {
         property: "Date",
-        direction: "descending"
+        direction: "ascending"
       }
     ]
   });
   return notionEvents.results;
 };
 
-const getEventBySlug = async (slug) => {
+const getEventBySlugMarkdown = async (slug) => {
   const response = await notion.databases.query({
     database_id,
     filter: {
@@ -63,5 +65,22 @@ const getEventBySlug = async (slug) => {
     markdown: mdString
   };
 };
+const getEventBySlug = async (slug) => {
+  const response = await notion.databases.query({
+    database_id,
+    filter: {
+      property: "Slug",
+      formula: {
+        string: {
+          equals: slug
+        }
+      }
+    }
+  });
 
-export { getAllEvents, getEventBySlug };
+  return {
+    event: response.results[0]
+  };
+};
+
+export { getAllEvents, getEventBySlug, getEventBySlugMarkdown };

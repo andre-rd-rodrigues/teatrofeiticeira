@@ -7,7 +7,6 @@ import { getAllEventsDates, getDayEvents } from "@/utils/tools";
 import { useState } from "react";
 
 function Espetaculos({ allEvents }) {
-  console.log(allEvents);
   const [eventsShow, setEventsShow] = useState(() =>
     getDayEvents(allEvents, today)
   );

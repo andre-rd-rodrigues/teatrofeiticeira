@@ -1,13 +1,13 @@
-import { Italiana, Poppins } from "next/font/google";
+import { Taviraj, Poppins } from "next/font/google";
 
-export const fontContent = Poppins({
+export const poppins = Poppins({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-content"
+  variable: "--font-poppins"
 });
 
-export const fontHeading = Italiana({
+export const fontHeading = Taviraj({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["100", "200", "300", "400"],
   variable: "--font-heading"
 });

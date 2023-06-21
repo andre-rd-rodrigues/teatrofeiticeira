@@ -1,11 +1,11 @@
-import HomepageEvent from "@/components/HomepageEvent/HomepageEvent";
+import FullScreenEvent from "@/components/FullScreenEvent/FullScreenEvent";
 import NextEventsSection from "@/components/NextEvents/NextEventsSection";
 import PageContainer from "@/components/PageContainer/PageContainer";
 
 export default function Home() {
   return (
     <>
-      <HomepageEvent />
+      {/*     <FullScreenEvent /> */}
       <PageContainer>
         <NextEventsSection />
       </PageContainer>

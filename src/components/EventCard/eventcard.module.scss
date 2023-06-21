@@ -14,6 +14,17 @@
   text-decoration: none;
   overflow: hidden;
 
+  &::after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    content: "";
+    background-color: #00000079;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
   &:hover {
     img {
       transform: scale(1.07);
@@ -26,12 +37,12 @@
   }
 
   p {
-    font-weight: 200;
+    font-weight: 300;
   }
 
   h4 {
     font-size: var(--fs-l-s);
-    margin: 20px 0 35px 0;
+    margin: 0px 0 35px 0;
   }
 }
 

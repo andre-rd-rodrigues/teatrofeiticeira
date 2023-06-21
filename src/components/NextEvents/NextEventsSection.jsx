@@ -1,18 +1,15 @@
-import React from "react";
+import { getAllEvents } from "@/lib/notion";
 import EventCard from "../EventCard/EventCard";
-import styles from "./nextEventsSection.module.scss";
-import PageContainer from "../PageContainer/PageContainer";
 import Section from "../Section/Section";
+import styles from "./nextEventsSection.module.scss";
 
-function NextEventsSection() {
+function NextEventsSection({ events }) {
   return (
     <Section title="Próximos espectáculos" className={styles.container}>
       <div className={styles.grid}>
-        <EventCard />
-        <EventCard />
-        <EventCard />
-        <EventCard />
-        <EventCard />
+        {events.map((event) => (
+          <EventCard key={event.id} event={event} />
+        ))}
       </div>
     </Section>
   );
