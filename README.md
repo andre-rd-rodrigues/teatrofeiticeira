@@ -1,4 +1,4 @@
-# Balcão Cristal Theatre Website
+# 🎭 Balcão Cristal 🎭
 
 Welcome to the Balcão Cristal Theatre GitHub repository! This repository contains the source code for the Balcão Cristal Theatre website, a platform where users can check upcoming events on the calendar, make reservations, explore the gallery, and get in touch with us. The website is built using Next.js and styled with Tailwind CSS.
 

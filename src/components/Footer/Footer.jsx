@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./footer.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { website_pages } from "../../../data";
+import { website_pages } from "../../data";
 
 const Footer = () => {
   return (
@@ -17,10 +17,10 @@ const Footer = () => {
             alt="Balcão Cristal"
           />
         </Link>
-        <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400 list-none">
+        <ul className="flex flex-wrap items-center mb-6 text-sm  text-gray-500 sm:mb-0 dark:text-gray-400 list-none">
           {website_pages.map(({ href, label }) => (
             <li key={label}>
-              <Link href={href} className="mr-4 md:mr-6 ">
+              <Link href={href} className="mr-4 md:mr-6 hover:underline">
                 {label}
               </Link>
             </li>

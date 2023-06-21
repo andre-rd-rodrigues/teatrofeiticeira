@@ -1,12 +1,14 @@
+import { getAllEvents, getEventBySlug } from "@/lib/notion";
 import React from "react";
+import ReactMarkdown from "react-markdown";
 
-function Event() {
-  return <div>Event</div>;
+function Event({ event }) {
+  return <ReactMarkdown className="markdown">{event.parent}</ReactMarkdown>;
 }
 
 export default Event;
 
-/* export const getStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const events = await getAllEvents();
 
   return {
@@ -24,7 +26,7 @@ export default Event;
 export const getStaticProps = async (ctx) => {
   let { slug } = ctx.params;
 
-  let { markdown } = await getSingleEvent(slug);
+  let { markdown } = await getEventBySlug(slug);
 
   return {
     props: {
@@ -32,4 +34,3 @@ export const getStaticProps = async (ctx) => {
     }
   };
 };
- */

@@ -1,4 +1,6 @@
+import { today, yesterday } from "@/utils/date";
 import { Client } from "@notionhq/client";
+
 const { NotionToMarkdown } = require("notion-to-md");
 
 const database_id = "33adc5ea6d084503aeeb770e054f22f8";
@@ -9,17 +11,25 @@ const notion = new Client({
 
 const n2m = new NotionToMarkdown({ notionClient: notion });
 
-/* Events */
-
+/* GET */
 const getAllEvents = async () => {
-  const myPosts = await notion.databases.query({
+  const notionEvents = await notion.databases.query({
     database_id,
     filter: {
       property: "Publish",
       checkbox: {
         equals: true
-      }
+      },
+      and: [
+        {
+          property: "Date",
+          date: {
+            after: yesterday
+          }
+        }
+      ]
     },
+
     sorts: [
       {
         property: "Date",
@@ -27,10 +37,10 @@ const getAllEvents = async () => {
       }
     ]
   });
-  return myPosts.results;
+  return notionEvents.results;
 };
 
-const getSingleEvent = async (slug) => {
+const getEventBySlug = async (slug) => {
   const response = await notion.databases.query({
     database_id,
     filter: {
@@ -54,4 +64,4 @@ const getSingleEvent = async (slug) => {
   };
 };
 
-export { getAllEvents, getSingleEvent };
+export { getAllEvents, getEventBySlug };
