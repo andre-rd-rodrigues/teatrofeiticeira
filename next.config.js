@@ -14,6 +14,10 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "**.notion.so"
+      },
+      {
+        protocol: "https",
+        hostname: "**.amazonaws.com"
       }
     ]
   }

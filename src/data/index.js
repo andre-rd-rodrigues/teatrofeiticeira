@@ -8,6 +8,10 @@ const website_pages = [
     href: "/espetaculos"
   },
   {
+    label: "Galeria",
+    href: "/galeria"
+  },
+  {
     label: "Contactos",
     href: "/contactos"
   }

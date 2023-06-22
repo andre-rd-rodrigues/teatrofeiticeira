@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./fullscreenevent.module.scss";
+import styles from "./eventherosection.module.scss";
 import Image from "next/image";
 import Button from "../Button/Button";
 import moment from "moment/moment";
 import useNotion from "@/hooks/useNotion";
 
-const FullScreenEvent = ({ event, height = "100vh", hasReadMore = true }) => {
+const EventHeroSection = ({ event, height = "100vh", hasReadMore = true }) => {
   const { title, date, slug, cover, sessions } = useNotion(event);
 
   if (!event) return null;
@@ -31,11 +31,11 @@ const FullScreenEvent = ({ event, height = "100vh", hasReadMore = true }) => {
           {hasReadMore && (
             <Button label="SABER MAIS" href={`/espetaculos/${slug}`} />
           )}
-          <Button label="RESERVAR" />
+          <Button label="RESERVAR" className={styles.reservarButton} />
         </div>
       </div>
     </div>
   );
 };
 
-export default FullScreenEvent;
+export default EventHeroSection;

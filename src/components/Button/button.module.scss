@@ -2,10 +2,12 @@
 @import "@/styles/colors.scss";
 
 .container {
+  height: 49px;
   background-color: transparent;
   transition: 0.4s;
   cursor: pointer;
   text-transform: uppercase;
+  text-decoration: none;
   border: 1px solid $white;
   padding: 15px 25px;
   color: $white;

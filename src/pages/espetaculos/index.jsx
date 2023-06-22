@@ -1,7 +1,7 @@
 import Calendar from "@/components/Calendar/Calendar";
 import EventHorizontalCard from "@/components/EventHorizontalCard/EventHorizontalCard";
 import Page from "@/components/Page/Page";
-import { getAllEvents, getEventByDate } from "@/lib/notion";
+import { getAllEvents } from "@/lib/notion";
 import { today } from "@/utils/date";
 import { getAllEventsDates, getDayEvents } from "@/utils/tools";
 import { useState } from "react";

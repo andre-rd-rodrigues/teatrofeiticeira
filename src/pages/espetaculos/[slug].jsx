@@ -1,23 +1,19 @@
-import FullScreenEvent from "@/components/FullScreenEvent/FullScreenEvent";
+import EventHeroSection from "@/components/EventHeroSection/EventHeroSection";
 import NextEventsSection from "@/components/NextEvents/NextEventsSection";
 import PageContainer from "@/components/PageContainer/PageContainer";
-import Section from "@/components/Section/Section";
 import {
   getAllEvents,
   getEventBySlug,
   getEventBySlugMarkdown
 } from "@/lib/notion";
-import React from "react";
 import ReactMarkdown from "react-markdown";
 
 function Event({ event, eventMarkdown, allEvents }) {
   return (
     <>
-      <FullScreenEvent event={event} height="70vh" hasReadMore={false} />
+      <EventHeroSection event={event} height="70vh" hasReadMore={false} />
       <PageContainer>
-        <ReactMarkdown className="markdown">
-          {eventMarkdown.parent}
-        </ReactMarkdown>
+        <ReactMarkdown className="markdown">{eventMarkdown}</ReactMarkdown>
         <NextEventsSection events={allEvents} />
       </PageContainer>
     </>
@@ -50,7 +46,7 @@ export const getStaticProps = async (ctx) => {
 
   return {
     props: {
-      eventMarkdown: markdown,
+      eventMarkdown: markdown.parent,
       event,
       allEvents
     }

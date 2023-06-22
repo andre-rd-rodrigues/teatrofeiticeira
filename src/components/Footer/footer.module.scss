@@ -7,5 +7,11 @@
   a {
     text-decoration: none;
     color: $dark;
+    font-weight: 400;
+    transition: 0.2s;
+    &:hover {
+      color: $toast-yellow;
+      text-decoration: none;
+    }
   }
 }
