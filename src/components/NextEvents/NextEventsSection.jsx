@@ -1,4 +1,3 @@
-import { getAllEvents } from "@/lib/notion";
 import EventCard from "../EventCard/EventCard";
 import Section from "../Section/Section";
 import styles from "./nextEventsSection.module.scss";

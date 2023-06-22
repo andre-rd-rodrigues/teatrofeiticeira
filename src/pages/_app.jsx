@@ -1,6 +1,6 @@
-import Layout from "@/app/layout";
-import { poppins, fontHeading } from "@/app/fonts";
-import "../app/globals.scss";
+import Layout from "@/components/Layout/Layout";
+import { poppins, fontHeading } from "@/fonts";
+import "@/styles/globals.scss";
 
 export default function MyApp({ Component, pageProps }) {
   return (

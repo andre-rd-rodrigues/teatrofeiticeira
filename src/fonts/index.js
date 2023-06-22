@@ -1,4 +1,4 @@
-import { Taviraj, Poppins } from "next/font/google";
+import { Taviraj, Poppins, DM_Serif_Display } from "next/font/google";
 
 export const poppins = Poppins({
   subsets: ["latin"],
@@ -6,8 +6,8 @@ export const poppins = Poppins({
   variable: "--font-poppins"
 });
 
-export const fontHeading = Taviraj({
+export const fontHeading = DM_Serif_Display({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400"],
+  weight: ["400"],
   variable: "--font-heading"
 });
