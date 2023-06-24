@@ -12,7 +12,6 @@ function Companhia() {
       </HeroSection>
       <PageContainer className={styles.container}>
         <h2>About Us</h2>
-
         <p>
           Welcome to <strong>Teatro Feiticeira do Norte</strong>, your premier
           destination for captivating theatrical experiences in{" "}

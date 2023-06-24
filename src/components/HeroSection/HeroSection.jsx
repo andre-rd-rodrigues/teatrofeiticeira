@@ -8,8 +8,9 @@ const HeroSection = ({ children, src, className }) => {
         fill
         sizes="100vw"
         src={src}
-        alt="Balcao Cristal"
+        alt="Balcão Cristal"
         className={styles.image}
+        priority
       />
       <div className={styles.bodyContainer}>{children}</div>
     </div>
