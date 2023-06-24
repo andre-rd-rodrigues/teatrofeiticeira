@@ -3,10 +3,6 @@ import { Client } from "@notionhq/client";
 
 const { NotionToMarkdown } = require("notion-to-md");
 
-const db_events_id = "33adc5ea6d084503aeeb770e054f22f8";
-const db_content_id = "9f9f2f41449444c4a4fbc6939eb09323";
-const gallery_id = "3024a91bc2fe46c8ad17a8e4a931f98a";
-
 const notion = new Client({
   auth: process.env.NOTION_KEY
 });
@@ -15,8 +11,9 @@ const n2m = new NotionToMarkdown({ notionClient: notion });
 
 /* Events */
 const getAllEvents = async () => {
+  console.log(process.env.DB_EVENTS_ID);
   const notionEvents = await notion.databases.query({
-    database_id: db_events_id,
+    database_id: process.env.DB_EVENTS_ID,
     filter: {
       and: [
         {
@@ -46,7 +43,7 @@ const getAllEvents = async () => {
 
 const getEventBySlugMarkdown = async (slug) => {
   const response = await notion.databases.query({
-    database_id: db_events_id,
+    database_id: process.env.DB_EVENTS_ID,
     filter: {
       property: "Slug",
       formula: {
@@ -70,7 +67,7 @@ const getEventBySlugMarkdown = async (slug) => {
 
 const getEventBySlug = async (slug) => {
   const response = await notion.databases.query({
-    database_id: db_events_id,
+    database_id: process.env.DB_EVENTS_ID,
     filter: {
       property: "Slug",
       formula: {
@@ -89,7 +86,7 @@ const getEventBySlug = async (slug) => {
 /* Content */
 const getContentMarkdownByPage = async (pageName) => {
   const response = await notion.databases.query({
-    database_id: db_content_id,
+    database_id: process.env.DB_CONTENT_ID,
     filter: {
       property: "Name",
       formula: {
@@ -112,7 +109,7 @@ const getContentMarkdownByPage = async (pageName) => {
 };
 const getContentByPage = async (pageName) => {
   const response = await notion.databases.query({
-    database_id: db_content_id,
+    database_id: process.env.DB_CONTENT_ID,
     filter: {
       property: "Name",
       formula: {
@@ -129,7 +126,7 @@ const getContentByPage = async (pageName) => {
 /* Gallery */
 const getGallery = async () => {
   const response = await notion.blocks.children.list({
-    block_id: gallery_id
+    block_id: process.env.DB_GALLERY_ID
   });
 
   return response.results;
