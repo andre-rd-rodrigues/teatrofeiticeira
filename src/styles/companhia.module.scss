@@ -1,5 +1,24 @@
+@import "@/styles/colors.scss";
+
 .container {
   padding: 30px var(--padding-y);
   max-width: 1000px;
   margin: auto;
+  color: $dark;
+
+  h2,
+  p {
+    margin: 16px 0;
+  }
+
+  h2 {
+    font-weight: 500;
+    margin-top: 30px;
+    font-family: var(--font-poppins);
+  }
+
+  strong,
+  b {
+    font-weight: 500;
+  }
 }

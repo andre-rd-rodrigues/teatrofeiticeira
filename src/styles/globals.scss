@@ -8,11 +8,22 @@
 
 body {
   margin: 0;
-  background-color: #e2e8f0;
+  background-color: #f8fafc;
 }
 
 * {
   font-family: var(--font-poppins);
+}
+
+a {
+  text-decoration: none;
+  color: $toast-yellow;
+  transition: 0.2s;
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 h1,

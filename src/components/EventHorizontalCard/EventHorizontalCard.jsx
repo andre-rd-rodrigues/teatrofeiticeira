@@ -8,7 +8,37 @@ const EventHorizontalCard = ({ event }) => {
   const { title, description, slug, cover, sessions } = useNotion(event);
 
   return (
-    <Link
+    <div
+      className={`${styles.container} bg-white rounded-xl shadow-md overflow-hidden`}
+    >
+      <Link href={`espetaculos/${slug}`}>
+        <div className="lg:flex">
+          <div className={`${styles.imageCard} relative`}>
+            <Image
+              fill
+              sizes="100vw"
+              className="object-cover"
+              src={cover}
+              alt={title}
+            />
+          </div>
+          <div className="p-8">
+            <div className="uppercase tracking-wide text-sm text-indigo-400 font-semibold">
+              {sessions}
+            </div>
+            <h4>{title}</h4>
+            <p className="mt-2">{description}</p>
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+};
+
+export default EventHorizontalCard;
+
+{
+  /* <Link
       href={`espetaculos/${slug}`}
       className={`${styles.card} shadow-xl no-underline mb-5`}
     >
@@ -22,8 +52,5 @@ const EventHorizontalCard = ({ event }) => {
           <b>Sessões:</b> {sessions}
         </p>
       </div>
-    </Link>
-  );
-};
-
-export default EventHorizontalCard;
+    </Link> */
+}

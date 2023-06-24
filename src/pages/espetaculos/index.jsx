@@ -17,14 +17,14 @@ function Espetaculos({ allEvents }) {
 
   return (
     <Page title="Espetáculos">
-      <div className="flex">
-        <div className="mx-4 w-50">
+      <div className="md:flex mt-32 gap-12">
+        <div>
           <Calendar
             onChangeCalendar={handleChangeCalendar}
             eventsDates={getAllEventsDates(allEvents)}
           />
         </div>
-        <div className="mx-4 w-50">
+        <div>
           <DynamicEventsSection events={eventsShow} loading={false} />
         </div>
       </div>

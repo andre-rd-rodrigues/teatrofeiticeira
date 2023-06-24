@@ -12,9 +12,17 @@ const website_pages = [
     href: "/galeria"
   },
   {
+    label: "Bilheteira",
+    href: "bilheteira"
+  },
+  {
     label: "Contactos",
     href: "/contactos"
   }
 ];
 
-export { website_pages };
+const contacts = {
+  tel: "+351 936577522"
+};
+
+export { website_pages, contacts };

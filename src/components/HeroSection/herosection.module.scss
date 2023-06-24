@@ -29,6 +29,7 @@
   padding: 0 var(--padding-y);
   div {
     width: 1000px;
+    transform: translateY(60px);
   }
 }
 
@@ -42,6 +43,7 @@
   .bodyContainer {
     div {
       width: 100%;
+      transform: translateY(0px);
     }
   }
 

@@ -1,37 +1,19 @@
 @import "@/styles/mixins";
 @import "@/styles/colors.scss";
 
-.card {
-  position: relative;
-  display: flex;
-  background-color: white;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 1000px;
-  color: $dark;
+.container {
+  max-width: 800px;
+  a {
+    color: $dark;
+  }
 
   h4 {
-    font-size: 1.5rem;
-    margin: 10px 0 25px 0;
-    font-weight: 600;
-  }
-
-  b {
-    font-weight: 600;
+    font-size: var(--fs-l-s);
+    margin: 10px 0 20px;
   }
 }
 
-.cardBody {
-  display: block;
-  padding: 20px 30px;
-  margin: auto;
-}
-
-.imageContainer {
-  position: relative;
-  min-width: 300px;
-
-  img {
-    object-fit: cover;
-  }
+.imageCard {
+  min-width: 230px;
+  min-height: 200px;
 }

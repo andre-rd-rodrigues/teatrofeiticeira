@@ -2,7 +2,10 @@
 @import "@/styles/colors.scss";
 
 .container {
+  max-width: 1200px;
   padding: var(--padding-x) var(--padding-y);
+  margin: auto;
+  color: $dark;
 
   h1 {
     font-size: var(--fs-xl);
