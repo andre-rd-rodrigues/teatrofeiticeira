@@ -7,11 +7,15 @@ import useNotion from "@/hooks/useNotion";
 import moment from "moment/moment";
 
 const EventCard = ({ event }) => {
-  const { slug, cover, date, title } = useNotion(event);
+  const { slug, cover, date_start, date_end, title } = useNotion(event);
 
   const isEventToday =
-    moment(date).isSame(moment(), "month") &&
-    moment(date).isSame(moment(), "day");
+    moment(date_start).isSame(moment(), "month") &&
+    moment(date_start).isSame(moment(), "day");
+
+  const date = date_end
+    ? `${moment(date_start).format("LL")} - ${moment(date_end).format("LL")}`
+    : moment(date_start).format("LL");
 
   return (
     <Link
@@ -26,7 +30,7 @@ const EventCard = ({ event }) => {
         alt="Picture of the author"
         className={styles.image}
       />
-      <p>{moment(date).format("LL")}</p>
+      <p>{date}</p>
       <h4>{title}</h4>
     </Link>
   );
