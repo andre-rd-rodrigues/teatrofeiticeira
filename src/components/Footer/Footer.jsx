@@ -6,10 +6,13 @@ import { website_pages } from "../../data";
 
 const Footer = () => {
   return (
-    <footer className={`${styles.container} mb-6`}>
+    <footer className={`${styles.container} mb-6 text-center`}>
       <hr className="my-6 sm:mx-auto dark:border-gray-100 lg:my-8" />
       <div className="sm:flex sm:items-center sm:justify-between">
-        <Link href="/" className="flex items-center mb-4 sm:mb-0">
+        <Link
+          href="/"
+          className="flex items-center mb-4 sm:mb-0 justify-center"
+        >
           <Image
             width={200}
             height={100}
@@ -17,12 +20,10 @@ const Footer = () => {
             alt="Balcão Cristal"
           />
         </Link>
-        <ul className="flex flex-wrap items-center mb-6 text-sm  text-gray-500 sm:mb-0 dark:text-gray-400 list-none">
+        <ul className="flex flex-wrap gap-4 items-center mb-6 text-sm  list-none">
           {website_pages.map(({ href, label }) => (
             <li key={label}>
-              <Link href={href} className="mr-4 md:mr-6 hover:underline">
-                {label}
-              </Link>
+              <Link href={href}>{label}</Link>
             </li>
           ))}
         </ul>
