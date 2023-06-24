@@ -1,0 +1,26 @@
+@import "@/styles/mixins";
+@import "@/styles/colors";
+
+.container {
+  position: relative;
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.caption {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+
+  div {
+    text-align: center;
+    width: 100%;
+    backdrop-filter: blur(3px);
+    background: rgba(32, 32, 32, 0.608);
+    color: $white;
+    padding: 5px;
+  }
+}

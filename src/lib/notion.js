@@ -5,6 +5,7 @@ const { NotionToMarkdown } = require("notion-to-md");
 
 const db_events_id = "33adc5ea6d084503aeeb770e054f22f8";
 const db_content_id = "9f9f2f41449444c4a4fbc6939eb09323";
+const gallery_id = "3024a91bc2fe46c8ad17a8e4a931f98a";
 
 const notion = new Client({
   auth: process.env.NOTION_KEY
@@ -66,6 +67,7 @@ const getEventBySlugMarkdown = async (slug) => {
     markdown: mdString
   };
 };
+
 const getEventBySlug = async (slug) => {
   const response = await notion.databases.query({
     database_id: db_events_id,
@@ -124,10 +126,20 @@ const getContentByPage = async (pageName) => {
   return response.results[0];
 };
 
+/* Gallery */
+const getGallery = async () => {
+  const response = await notion.blocks.children.list({
+    block_id: gallery_id
+  });
+
+  return response.results;
+};
+
 export {
   getAllEvents,
   getEventBySlug,
   getEventBySlugMarkdown,
   getContentMarkdownByPage,
-  getContentByPage
+  getContentByPage,
+  getGallery
 };

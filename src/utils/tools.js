@@ -11,3 +11,8 @@ export const getDayEvents = (events, date) => {
       moment(event.properties.Date.date.start).format("YYYY-MM-DD") === date
   );
 };
+
+// Function that takes a min and max number and generates a number between them
+export const randomNumber = (min, max) => {
+  return Math.floor(Math.random() * (max - min) + min);
+};

@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  height: 40vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   padding: 0 var(--padding-y);
@@ -46,7 +46,7 @@
   }
 
   .container {
-    height: 30vh;
+    height: 40vh;
     .bodyContainer {
       transform: translateY(50px);
     }

@@ -6,6 +6,7 @@ import React from "react";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import useNotion from "@/hooks/useNotion";
 import styles from "@/styles/companhia.module.scss";
+import { API_PAGE_NAME } from "@/utils/constants";
 
 function Companhia({ contentMarkdown, content }) {
   const { coverFile } = useNotion(content);
@@ -27,8 +28,8 @@ function Companhia({ contentMarkdown, content }) {
 export default Companhia;
 
 export async function getServerSideProps() {
-  const { markdown } = await getContentMarkdownByPage("Companhia");
-  const content = await getContentByPage("Companhia");
+  const { markdown } = await getContentMarkdownByPage(API_PAGE_NAME.COMPANHIA);
+  const content = await getContentByPage(API_PAGE_NAME.COMPANHIA);
 
   return {
     props: {

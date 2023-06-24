@@ -1,4 +1,4 @@
-const useHook = (data) => {
+const useNotion = (data) => {
   if (!data)
     return {
       slug: undefined,
@@ -20,4 +20,4 @@ const useHook = (data) => {
   return { slug, title, date, cover, coverFile, sessions, description };
 };
 
-export default useHook;
+export default useNotion;
