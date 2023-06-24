@@ -17,7 +17,7 @@ function Espetaculos({ allEvents }) {
 
   return (
     <Page title="Espetáculos">
-      <div className="md:flex mt-32 gap-12">
+      <div className="md:flex lg:mt-32 gap-12">
         <div>
           <Calendar
             onChangeCalendar={handleChangeCalendar}
